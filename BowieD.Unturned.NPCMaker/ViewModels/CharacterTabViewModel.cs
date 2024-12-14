@@ -558,6 +558,7 @@ namespace BowieD.Unturned.NPCMaker.ViewModels
         public Equip_Type Equipped { get => Character.equipped; set => Character.equipped = value; }
         public ENPCHoliday HolidayRestriction { get => Character.holidayRestriction; set => Character.holidayRestriction = value; }
 
+        private ICommand goToDialogueCommand;
         private ICommand editVisibilityConditionsCommand;
         private ICommand randomFaceCommand;
         private ICommand randomHairCommand;
@@ -571,6 +572,35 @@ namespace BowieD.Unturned.NPCMaker.ViewModels
         private ICommand randomGuidCommand;
         private ICommand setGuidCommand;
 
+        public ICommand GoToDialogueCommand
+        {
+            get
+            {
+                if (goToDialogueCommand == null)
+                {
+                    goToDialogueCommand = new BaseCommand(() =>
+                    {
+                        if (MainWindow.Instance is null)
+                            return;
+
+                        if (MainWindow.CurrentProject?.data?.dialogues is null)
+                            return;
+
+                        var dialogue = MainWindow.CurrentProject.data.dialogues.FirstOrDefault(d => d.ID == DialogueID);
+
+                        if (dialogue is null)
+                            return;
+
+                        var index = MainWindow.CurrentProject.data.dialogues.IndexOf(dialogue);
+
+                        MainWindow.Instance.dialogueTabSelect.SelectedIndex = index;
+                        MainWindow.Instance.mainTabControl.SelectedIndex = 1;
+                    });
+                }
+
+                return goToDialogueCommand;
+            }
+        }
         public ICommand SortEditorNameAscending
         {
             get

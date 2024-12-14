@@ -22,6 +22,7 @@ namespace BowieD.Unturned.NPCMaker.XAML
             IProvideValueTarget providerValueTarget = serviceProvider as IProvideValueTarget;
             MultiBinding multiBinding = new MultiBinding()
             {
+                Mode = BindingMode.OneWay,
                 Converter = new LocalizationConverter(Key),
                 NotifyOnSourceUpdated = true
             };

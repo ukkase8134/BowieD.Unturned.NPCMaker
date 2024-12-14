@@ -285,7 +285,9 @@
                                             </ToolTip>
                                         </xctk:UShortUpDown.ToolTip>
                                     </xctk:UShortUpDown>
-                                    <TextBlock VerticalAlignment="Center" Grid.Column="1" Margin="5" TextWrapping="Wrap" Text="{xaml:Localize Key=CHARACTER_Dialogue}"/>
+                                    <TextBlock VerticalAlignment="Center" Grid.Column="1" Margin="5" TextWrapping="Wrap">
+                                       <Hyperlink Command="{Binding GoToDialogueCommand}"><Run Text="{xaml:Localize Key=CHARACTER_Dialogue}"/></Hyperlink>
+                                    </TextBlock>
                                 </Grid>
                                 <TextBox Text="{Binding Comment, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" mah:TextBoxHelper.Watermark="{xaml:Localize Key=INTERFACE_App_Comment}" Name="character_commentbox" Margin="5" Height="26"/>
                                 <Grid>
