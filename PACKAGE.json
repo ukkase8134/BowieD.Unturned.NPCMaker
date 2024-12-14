@@ -10,6 +10,17 @@
             "actionType": "URL",
             "actionArgs": "https://boosty.to/bowied"
         }]
+    },
+    {
+        "text": "StartUp_AssetEditor",
+        "loc": true,
+        "buttons": [
+        {
+            "text": "StartUp_Patreon_Open",
+            "loc": true,
+            "actionType": "URL",
+            "actionArgs": "https://boosty.to/bowied"
+        }]
     }],
     "feedback": [
     {
