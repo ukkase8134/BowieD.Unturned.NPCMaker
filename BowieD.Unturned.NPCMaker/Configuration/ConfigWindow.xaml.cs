@@ -223,6 +223,7 @@ namespace BowieD.Unturned.NPCMaker.Configuration
                 themeType = CurrentThemeType,
                 hasUnlockedSecretThemes = HasUnlockedSecretThemes,
                 unlockedItemRewardEditor = UnlockedItemRewardEditor_Box.IsChecked.Value,
+                enableWorkshopExporter = EnableWorkshopExporter_Box.IsChecked.Value,
             };
             set
             {
@@ -277,6 +278,7 @@ namespace BowieD.Unturned.NPCMaker.Configuration
                 CurrentThemeType = value.themeType;
                 HasUnlockedSecretThemes = value.hasUnlockedSecretThemes;
                 UnlockedItemRewardEditor_Box.IsChecked = value.unlockedItemRewardEditor;
+                EnableWorkshopExporter_Box.IsChecked = value.enableWorkshopExporter;
             }
         }
 

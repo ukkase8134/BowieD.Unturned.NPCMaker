@@ -12,6 +12,7 @@
         xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         xmlns:xaml="clr-namespace:BowieD.Unturned.NPCMaker.XAML" xmlns:viewmodels="clr-namespace:BowieD.Unturned.NPCMaker.ViewModels"
                  mc:Ignorable="d"
+                 d:DataContext="{d:DesignInstance Type=viewmodels:MainWindowViewModel}"
         Title="{xaml:Localize Key=GENERAL_Title}"
         MinHeight="623" Height="623"
         MinWidth="1000" Width="1000"
@@ -92,7 +93,8 @@
                             <iconPacks:PackIconMaterial Kind="Export" Foreground="{DynamicResource AccentColor}"/>
                         </MenuItem.Icon>
                     </MenuItem>
-                    <MenuItem Command="{Binding ExportProjectToUnturnedCommand}" Header="{xaml:Localize Key=INTERFACE_Main_Menu_File_ExportToUnturned}" Name="exportToUnturnedButton">
+                    <MenuItem Command="{Binding ExportProjectToUnturnedCommand}" Header="{xaml:Localize Key=INTERFACE_Main_Menu_File_ExportToUnturned}" Name="exportToUnturnedButton"
+                              Visibility="{Binding IsEnabled, RelativeSource={RelativeSource Self}, Converter={StaticResource BoolToVisibilityConverter}}">
                         <MenuItem.Icon>
                             <iconPacks:PackIconMaterial Kind="Export" Foreground="{DynamicResource AccentColor}"/>
                         </MenuItem.Icon>

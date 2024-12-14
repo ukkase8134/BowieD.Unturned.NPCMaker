@@ -48,6 +48,7 @@ namespace BowieD.Unturned.NPCMaker.Configuration
         public EThemeType themeType = EThemeType.Normal;
         public bool hasUnlockedSecretThemes = false;
         public bool unlockedItemRewardEditor = false;
+        public bool enableWorkshopExporter = false;
 
         public void Apply(AppConfig from, out bool hasToRestart)
         {
@@ -69,6 +70,7 @@ namespace BowieD.Unturned.NPCMaker.Configuration
             hasToRestart |= (useOldStyleMoveUpDown != from.useOldStyleMoveUpDown);
             hasToRestart |= (replaceMissingKeysWithEnglish != from.replaceMissingKeysWithEnglish);
             hasToRestart |= (forceSoftwareRendering != from.forceSoftwareRendering);
+            hasToRestart |= (enableWorkshopExporter != from.enableWorkshopExporter);
 
             // it has to do some work before it can be applied
             if (useDarkMode != from.useDarkMode || accentColor != from.accentColor || themeType != from.themeType)
@@ -200,6 +202,7 @@ namespace BowieD.Unturned.NPCMaker.Configuration
             alternateBoolValue = true;
             forceSoftwareRendering = false;
             hasUnlockedSecretThemes = false;
+            enableWorkshopExporter = false;
             themeType = EThemeType.Normal;
 
             App.Logger.Log($"[CFG] - Default configuration loaded!");

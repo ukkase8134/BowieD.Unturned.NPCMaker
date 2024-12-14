@@ -26,6 +26,13 @@ namespace BowieD.Unturned.NPCMaker.ViewModels
 {
     public sealed class MainWindowViewModel : BaseViewModel
     {
+#if DEBUG
+        [Obsolete("USE FOR DESIGNER ONLY")]
+        public MainWindowViewModel()
+        {
+
+        }
+#endif
         public MainWindowViewModel(MainWindow mainWindow)
         {
             MainWindow = mainWindow;
@@ -200,7 +207,10 @@ namespace BowieD.Unturned.NPCMaker.ViewModels
 
                 UpdateAllTabs();
             };
+
+            MainWindow.exportToWorkshopButton.Visibility = AppConfig.Instance.enableWorkshopExporter ? Visibility.Visible : Visibility.Collapsed;
         }
+
         public MainWindow MainWindow { get; set; }
         public CharacterTabViewModel CharacterTabViewModel { get; set; }
         public DialogueTabViewModel DialogueTabViewModel { get; set; }
