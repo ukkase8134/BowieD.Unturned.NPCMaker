@@ -1,4 +1,4 @@
-﻿using BowieD.Unturned.NPCMaker;
+using BowieD.Unturned.NPCMaker;
 using BowieD.Unturned.NPCMaker.Common;
 using BowieD.Unturned.NPCMaker.Configuration;
 using BowieD.Unturned.NPCMaker.Controls;
@@ -571,7 +571,6 @@ namespace BowieD.Unturned.NPCMaker.ViewModels
         private ICommand sortEditorNameA, sortEditorNameD, sortDisplayNameA, sortDisplayNameD, sortIDA, sortIDD;
         private ICommand randomGuidCommand;
         private ICommand setGuidCommand;
-
         public ICommand GoToDialogueCommand
         {
             get
